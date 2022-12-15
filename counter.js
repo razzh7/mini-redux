@@ -1,4 +1,5 @@
 import { createStore } from './src/mini-redux'
+import rooterReducer from './src/feature/counter'
 
 const decreaseBtn = document.getElementById('decrease')
 const increaseBtn = document.getElementById('increase')
@@ -6,19 +7,6 @@ const counter = document.getElementById('counter')
 
 function render() {
   counter.innerHTML = store.getState()
-}
-
-function rooterReducer(state = 0, action) {
-  switch (action.type) {
-    case 'counter/increase': {
-      return state + 1
-    }
-    case 'counter/decrease': {
-      return state - 1
-    }
-    default:
-      return state
-  }
 }
 
 const store = createStore(rooterReducer)
