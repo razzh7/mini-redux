@@ -1,5 +1,5 @@
-export default function createStore(reducer) {
-  let state
+export default function createStore(reducer, preloadedState) {
+  let state = preloadedState
   const listeners = []
 
   function getState() {
