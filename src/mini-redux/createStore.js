@@ -1,6 +1,10 @@
-export default function createStore(reducer, preloadedState) {
+export default function createStore(reducer, preloadedState, enhancer) {
   let state = preloadedState
   const listeners = []
+
+  if (enhancer !== undefined && typeof enhancer === 'function') {
+    return enhancer(createStore)(reducer, preloadedState)
+  }
 
   function getState() {
     return state
@@ -13,6 +17,7 @@ export default function createStore(reducer, preloadedState) {
     return function unsubscribe() {
       const index = listeners.indexOf(listener)
       listeners.splice(index, 1)
+      console.log(listeners)
     }
   }
 
