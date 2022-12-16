@@ -95,3 +95,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.mini-redux {
+  font-size: 30px;
+  background: -webkit-linear-gradient(315deg, #6B41B4 25%, #7BC6CC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-size {
+  font-size: 25px;
+}
