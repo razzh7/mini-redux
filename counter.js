@@ -1,6 +1,6 @@
 import { createStore } from './src/mini-redux'
 import { sayHiEnhancer, sayHelloEnhancer } from './src/feature/enhancer'
-import { print1, print2 } from './src/feature/middleware'
+import { print1Middleware, print2Middleware } from './src/feature/middleware'
 import compose from './src/mini-redux/compose'
 import applyMiddleware from './src/mini-redux/applyMiddleware'
 import rooterReducer from './src/feature/counter'
@@ -12,7 +12,7 @@ const counter = document.getElementById('counter')
 // 可以在这里打个 debuuger 来看 compose 执行过程<从右到左依次排列函数，返回组合函数>
 // const composeEnhancer = compose(sayHiEnhancer, sayHelloEnhancer)
 // const store = createStore(rooterReducer, undefined, composeEnhancer)
-const middleware = applyMiddleware(print1, print2)
+const middleware = applyMiddleware(print1Middleware, print2Middleware)
 const store = createStore(rooterReducer, 
   compose(sayHiEnhancer, sayHelloEnhancer, middleware))
 

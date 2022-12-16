@@ -2,7 +2,7 @@
  * @param next print2 传过来的(action) => {...} 函数
  * @param action store.dispatch 传入的 action 对象
  */
-export const print1 = (storeAPI) => (next) => (action) => {
+export const print1Middleware = (storeAPI) => (next) => (action) => {
   console.log('Middleware::print1')
   return next(action)
 }
@@ -13,7 +13,7 @@ export const print1 = (storeAPI) => (next) => (action) => {
  * @param action store.dispatch 传入的 action
  * @returns store.dispatch 函数
  */
-export const print2 = (storeAPI) => (next) => (action) => {
+export const print2Middleware = (storeAPI) => (next) => (action) => {
   console.log('Middleware::print2')
   return next(action)
 }
