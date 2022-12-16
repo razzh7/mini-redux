@@ -9,11 +9,12 @@ const decreaseBtn = document.getElementById('decrease')
 const increaseBtn = document.getElementById('increase')
 const counter = document.getElementById('counter')
 
-// 可以在这里打个 debuuger 来看 compose 执行过程<从右到左依次执行函数>
+// 可以在这里打个 debuuger 来看 compose 执行过程<从右到左依次排列函数，返回组合函数>
 // const composeEnhancer = compose(sayHiEnhancer, sayHelloEnhancer)
 // const store = createStore(rooterReducer, undefined, composeEnhancer)
 const middleware = applyMiddleware(print1, print2)
-const store = createStore(rooterReducer, compose(sayHiEnhancer, sayHelloEnhancer, middleware))
+const store = createStore(rooterReducer, 
+  compose(sayHiEnhancer, sayHelloEnhancer, middleware))
 
 function render() {
   counter.innerHTML = store.getState()
