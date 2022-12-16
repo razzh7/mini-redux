@@ -17,7 +17,6 @@ export default function createStore(reducer, preloadedState, enhancer) {
     return function unsubscribe() {
       const index = listeners.indexOf(listener)
       listeners.splice(index, 1)
-      console.log(listeners)
     }
   }
 
