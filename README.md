@@ -30,3 +30,4 @@ yarn test
   - [x] dispatch
 
 - [x] compose
+- [x] applyMiddleware
