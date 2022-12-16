@@ -1,11 +1,16 @@
 export default function createStore(reducer, preloadedState, enhancer) {
-  let state = preloadedState
-  // 订阅器
-  const listeners = []
+  if (typeof preloadedState === 'function' && enhancer === undefined) {
+    enhancer = preloadedState
+    preloadedState = undefined
+  }
   // 增强器 enhancer
   if (enhancer !== undefined && typeof enhancer === 'function') {
     return enhancer(createStore)(reducer, preloadedState)
   }
+
+  let state = preloadedState
+  // 订阅器
+  const listeners = []
 
   // 获取最新的 State 值
   function getState() {
