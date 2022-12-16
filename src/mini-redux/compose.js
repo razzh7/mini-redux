@@ -3,7 +3,7 @@
  * @param  funcs 要组合的函数
  * @returns 要组合的函数
  */
-export function compose(...funcs) {
+export default function compose(...funcs) {
   if (funcs.length === 1) {
     return funcs[0]
   }

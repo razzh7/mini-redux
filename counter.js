@@ -1,6 +1,6 @@
 import { createStore } from './src/mini-redux'
 import { sayHiEnhancer, sayHelloEnhancer } from './src/feature/enhancer'
-import { compose } from './src/mini-redux/compose'
+import compose from './src/mini-redux/compose'
 import rooterReducer from './src/feature/counter'
 
 const decreaseBtn = document.getElementById('decrease')
