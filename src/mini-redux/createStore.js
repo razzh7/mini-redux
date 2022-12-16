@@ -1,9 +1,11 @@
 export default function createStore(reducer, preloadedState, enhancer) {
+  // 当省略了 preloadedState，直接传入 enhancer 时
   if (typeof preloadedState === 'function' && enhancer === undefined) {
     enhancer = preloadedState
     preloadedState = undefined
   }
-  // 增强器 enhancer
+  
+  // 增强器 enhancer logic
   if (enhancer !== undefined && typeof enhancer === 'function') {
     return enhancer(createStore)(reducer, preloadedState)
   }
