@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest'
-import compose from '../src/mini-redux/compose'
+import { compose } from '../src/mini-redux'
 
 describe('compose', () => {
   test('composes from right to left', () => {
